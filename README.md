@@ -65,15 +65,8 @@ Express JS
 Mongo DB
 Bootstrap
 
----
 
-📌 **Cách dùng:**
-- Tạo file `README.md` ở thư mục gốc dự án Git
-- Dán nội dung trên vào
-- Commit và push lên GitHub
 
----
 
-Muốn mình cập nhật thêm phần nào như **ảnh minh họa**, **link Figma**, hay **hướng dẫn cài DB** không?
 
 
