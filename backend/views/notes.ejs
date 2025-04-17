@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách ghi chú</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Danh sách ghi chú</h1>
+        
+        <a href="/api/notes/create/view" class="btn btn-primary mb-3">Tạo ghi chú mới</a>
+        
+        <% if (notes && notes.length > 0) { %>
+            <div class="row">
+                <% notes.forEach(note => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= note.title %></h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Danh mục: <%= note.category %></h6>
+                                <p class="card-text"><%= note.content.substring(0, 100) %>...</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="/api/notes/view/<%= note._id %>" class="btn btn-info btn-sm">Xem</a>
+                                    <a href="/api/notes/edit/<%= note._id %>" class="btn btn-warning btn-sm">Sửa</a>
+                                    <button class="btn btn-danger btn-sm" onclick="deleteNote('<%= note._id %>')">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Tạo ngày: <%= new Date(note.createdAt).toLocaleDateString('vi-VN') %>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <div class="alert alert-info">
+                Không có ghi chú nào. Hãy tạo ghi chú mới!
+            </div>
+        <% } %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function deleteNote(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa ghi chú này?')) {
+                fetch(`/api/notes/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    } else {
+                        alert('Có lỗi xảy ra khi xóa ghi chú');
+                    }
+                })
+                .catch(error => {
+                    console.error('Lỗi:', error);
+                    alert('Có lỗi xảy ra khi xóa ghi chú');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.header .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s ease;
+}
+
+.header .nav-link:hover {
+  color: white !important;
+}
+
+.header .form-control {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.header .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: none;
+}
+
+.header .dropdown-menu {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .dropdown-item {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.header .dropdown-item:hover {
+  background-color: #f8f9fa;
+} 
