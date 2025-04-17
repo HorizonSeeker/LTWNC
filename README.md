@@ -45,8 +45,25 @@ Cần có Node.js & npm cài sẵn. Sử dụng .env để cấu hình database 
 
 📸 Demo
 
+Landing Page
 ![image](https://github.com/user-attachments/assets/369ec914-168e-4679-8e2a-bb5a3c3ad837)
-
+Login Form
+You can register a new account or login with an existing one.
+![image](https://github.com/user-attachments/assets/2d4432f9-bac5-4b98-81f6-ce1f3fbaf66d)
+Edit Profile
+![image](https://github.com/user-attachments/assets/f6936b68-8205-4b1c-bcd6-1f1b94a8051a)
+Create a Note
+![image](https://github.com/user-attachments/assets/44edc16e-9233-4e0d-a487-9ff11202e482)
+All Notes
+![image](https://github.com/user-attachments/assets/2a30cf60-db33-44ae-a350-2ef3cbcefa96)
+Edit Note
+![image](https://github.com/user-attachments/assets/7e240811-7997-431c-94d3-fc4cd3f41f20)
+Built with
+React JS
+Node JS
+Express JS
+Mongo DB
+Bootstrap
 
 ---
 
